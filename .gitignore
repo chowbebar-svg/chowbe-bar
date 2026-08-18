@@ -3,6 +3,10 @@ node_modules/
 .fontello-session
 reference*.html
 test*.html
-_*.js
-_*.json
 *.log
+
+# Scratch/diagnostic scripts live only at the repo root.
+# Keep these anchored so theme files like js/custom/__main.js are not excluded.
+/_*.js
+/_*.json
+/_*.png
