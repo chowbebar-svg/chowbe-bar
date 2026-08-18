@@ -14,7 +14,9 @@
 }
 .chowbe_logo b{color:#c19d68;font-weight:900;}
 .logo_fixed.chowbe_logo{color:#2b2b2b;}
-.logo_side.chowbe_logo,.logo_footer.chowbe_logo{color:#fff;}
+.logo_side.chowbe_logo{color:#fff;}
+/* Footer sits on a light background, so the wordmark needs dark text. */
+.logo_footer.chowbe_logo{color:#2b2b2b;font-size:30px;}
 .header_mobile .chowbe_logo{font-size:20px;line-height:44px;}
 
 /* ---- Elegant script for the About/Welcome heading ---- */
