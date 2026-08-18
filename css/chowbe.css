@@ -1,0 +1,134 @@
+@import url(https://fonts.googleapis.com/css?family=Great+Vibes&display=swap);
+
+/* ---- Text wordmark logo (replaces oldstory raster logo) ---- */
+.chowbe_logo{
+	display:inline-block;
+	font-family:'Playfair Display',serif;
+	font-weight:900;
+	text-transform:uppercase;
+	letter-spacing:2px;
+	line-height:54px;
+	white-space:nowrap;
+	font-size:26px;
+	color:#fff;
+}
+.chowbe_logo b{color:#c19d68;font-weight:900;}
+.logo_fixed.chowbe_logo{color:#2b2b2b;}
+.logo_side.chowbe_logo,.logo_footer.chowbe_logo{color:#fff;}
+.header_mobile .chowbe_logo{font-size:20px;line-height:44px;}
+
+/* ---- Elegant script for the About/Welcome heading ---- */
+h1.welcome_script{
+	font-family:'Great Vibes',cursive;
+	font-weight:400;
+	text-transform:none;
+	font-size:82px;
+	line-height:1.05;
+	color:#c19d68;
+}
+
+/* ---- Anchor offset so fixed header doesn't cover section tops ---- */
+#about,#types,#menu-section,#enquiry,#note{scroll-margin-top:90px;}
+
+/* ---- Types of Bars ---- */
+.types_of_bars .column-1_3,
+.types_of_bars .column-1_2{margin-bottom:30px;}
+.bar_card{
+	background:#faf7f2;
+	border:1px solid #ece3d5;
+	height:100%;
+	transition:box-shadow .3s ease, transform .3s ease;
+}
+.bar_card:hover{box-shadow:0 18px 40px rgba(0,0,0,.12);transform:translateY(-4px);}
+.bar_card_media{overflow:hidden;}
+.bar_card_media img{width:100%;height:230px;object-fit:cover;display:block;transition:transform .5s ease;}
+.bar_card:hover .bar_card_media img{transform:scale(1.06);}
+.bar_card_body{padding:26px 26px 30px;}
+.bar_card_body h3{margin:0 0 10px;}
+.bar_card_tag{color:#c19d68;font-style:italic;margin-bottom:16px;display:block;}
+.bar_card_body ul{list-style:none;margin:0;padding:0;}
+.bar_card_body ul li{position:relative;padding:6px 0 6px 22px;border-bottom:1px dashed #e4d8c5;}
+.bar_card_body ul li:last-child{border-bottom:none;}
+.bar_card_body ul li:before{content:'\e820';font-family:'fontello';position:absolute;left:0;top:7px;color:#c19d68;font-size:12px;}
+
+/* ---- Enquiry form ---- */
+.enquiry_section{background:#1c1c1c;}
+.enquiry_form{max-width:960px;margin:0 auto;}
+.enquiry_form .field_row{display:flex;flex-wrap:wrap;gap:22px;margin-bottom:22px;}
+.enquiry_form .field{flex:1 1 calc(50% - 11px);min-width:0;display:flex;flex-direction:column;}
+.enquiry_form .field.full{flex:1 1 100%;}
+.enquiry_form label{color:#c19d68;font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;}
+.enquiry_form input,
+.enquiry_form select,
+.enquiry_form textarea{
+	background:#262626;
+	border:1px solid #3a3a3a;
+	color:#f2f2f2;
+	padding:14px 16px;
+	width:100%;
+	max-width:100%;
+	min-width:0;
+	box-sizing:border-box;
+	font-size:15px;
+	font-family:inherit;
+	line-height:1.4;
+	appearance:none;
+	-webkit-appearance:none;
+	transition:border-color .25s ease;
+}
+.enquiry_form input[type="date"]{
+	-webkit-appearance:none;
+	appearance:none;
+	min-height:48px;
+	color-scheme:dark;
+}
+.enquiry_form input[type="date"]::-webkit-calendar-picker-indicator{
+	filter:invert(.7);
+	cursor:pointer;
+	opacity:.8;
+}
+.enquiry_form select{
+	background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23c19d68' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+	background-repeat:no-repeat;
+	background-position:right 16px center;
+	padding-right:40px;
+	cursor:pointer;
+}
+.enquiry_form input:focus,
+.enquiry_form select:focus,
+.enquiry_form textarea:focus{outline:none;border-color:#c19d68;}
+.enquiry_form textarea{min-height:130px;resize:vertical;}
+.enquiry_form .enquiry_submit{
+	background:#c19d68;color:#1c1c1c;border:none;cursor:pointer;
+	padding:16px 46px;text-transform:uppercase;letter-spacing:2px;font-weight:700;
+	transition:background .25s ease;
+}
+.enquiry_form .enquiry_submit:hover{background:#d8b988;}
+.enquiry_form .enquiry_submit[disabled]{opacity:.6;cursor:not-allowed;}
+
+/* ---- Enquiry submit feedback bar ---- */
+.enquiry_alert{
+	display:none;
+	max-width:960px;
+	margin:0 auto 26px;
+	padding:16px 22px;
+	font-size:15px;
+	letter-spacing:.4px;
+	border-left:4px solid transparent;
+}
+.enquiry_alert.is_visible{display:block;}
+.enquiry_alert.is_success{background:rgba(193,157,104,.14);border-left-color:#c19d68;color:#f0e3cd;}
+.enquiry_alert.is_error{background:rgba(180,70,60,.16);border-left-color:#b4463c;color:#f3d8d5;}
+
+/* ---- Note / Meet the Core Crew ---- */
+.crew_wrap{display:flex;align-items:center;gap:46px;flex-wrap:wrap;justify-content:center;}
+.crew_photo{flex:0 0 auto;}
+.crew_photo img{width:220px;height:220px;object-fit:cover;border-radius:50%;border:6px solid #c19d68;}
+.crew_text{flex:1 1 420px;max-width:560px;}
+.crew_text p{margin-bottom:14px;}
+
+@media (max-width:768px){
+	h1.welcome_script{font-size:58px;}
+	.enquiry_form .field{flex:1 1 100%;}
+	.crew_wrap{flex-direction:column;text-align:center;}
+}

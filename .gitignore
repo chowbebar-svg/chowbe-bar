@@ -1,0 +1,8 @@
+node_modules/
+.netlify/
+.fontello-session
+reference*.html
+test*.html
+_*.js
+_*.json
+*.log
