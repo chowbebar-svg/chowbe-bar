@@ -29,6 +29,9 @@ h1.welcome_script{
 	color:#c19d68;
 }
 
+/* ---- About section after illustration removed ---- */
+#about .column-1_1{max-width:720px;}
+
 /* ---- Anchor offset so fixed header doesn't cover section tops ---- */
 #about,#types,#menu-section,#enquiry,#note{scroll-margin-top:90px;}
 
