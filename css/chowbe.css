@@ -368,6 +368,9 @@ h1.welcome_script{
 .enquiry_alert.is_error{background:rgba(180,70,60,.16);border-left-color:#b4463c;color:#f3d8d5;}
 
 /* ---- Note / Meet the Core Crew ---- */
+#note{
+	background: url(../images/bg.jpg) repeat left top scroll;
+}
 .crew_wrap{display:flex;align-items:center;gap:46px;flex-wrap:wrap;justify-content:center;}
 .crew_photo{flex:0 0 auto;}
 .crew_photo img{
@@ -379,7 +382,7 @@ h1.welcome_script{
 	display:block;
 }
 .crew_text{flex:1 1 420px;max-width:560px;}
-.crew_text p{margin-bottom:14px;}
+.crew_text p{margin-bottom:14px;color:#555;}
 
 /* ---- Legal pages (Cookie Policy etc.) ---- */
 /* These pages have no dark hero, so the header must sit on a light background. */
