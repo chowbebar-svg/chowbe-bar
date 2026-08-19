@@ -1,4 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+/* ==========================================================================
+   Global typography — the whole site uses only Times New Roman and Arial.
+   Serif (Times New Roman) for headings and body copy, Arial for UI chrome
+   (nav, buttons, form controls, small labels). Icon fonts live on ::before /
+   ::after pseudo-elements, which the universal selector below does not match.
+   ========================================================================== */
+body{
+	font-family:"Times New Roman",Times,serif !important;
+}
+/* Force every element onto the inherited family so no theme webfont survives,
+   while still letting the Arial blocks below cascade down to their children. */
+body *{
+	font-family:inherit !important;
+}
+
+button,
+input,
+select,
+textarea,
+optgroup,
+h5,h6,
+.menu_main_nav,
+.menu_main_nav > li ul,
+.menu_side_nav,
+.menu_side_nav > li ul,
+.menu_side_responsive,
+.menu_side_responsive > li ul,
+.sidebar_outer_menu .menu_side_nav > li ul,
+.sidebar_outer_menu .menu_side_responsive > li ul,
+.pushy,
+.pushy a,
+.breadcrumbs,
+.sc_button,
+.theme_button,
+.post_info_posted,
+.widget_area .widget_calendar,
+.chowbe_logo{
+	font-family:Arial,Helvetica,sans-serif !important;
+}
 
 /* ---- Text wordmark logo (replaces oldstory raster logo) ---- */
 .chowbe_logo{
@@ -57,7 +95,7 @@ h2.simple_heading.white{color:#fff !important;}
 	margin-bottom:0 !important;
 }
 #menu-section .menu_intro{
-	font-family:Arial,Helvetica,sans-serif;
+	font-family:Arial,Helvetica,sans-serif !important;
 	color:#666;
 	max-width:100%;
 	margin:12px 0 0;
@@ -110,7 +148,7 @@ h2.simple_heading.white{color:#fff !important;}
 
 /* ---- Luxury serif for the About/Welcome heading ---- */
 h1.welcome_script{
-	font-family:'Cormorant Garamond','Didot','Playfair Display',Georgia,serif;
+	font-family:"Times New Roman",Times,serif !important;
 	font-style:italic;
 	font-weight:300;
 	text-transform:none;
@@ -194,13 +232,13 @@ h1.welcome_script{
 	display:block;
 }
 .types_of_bars .type_copy h3{
-	font-family:"Times New Roman",Times,serif;
+	font-family:"Times New Roman",Times,serif !important;
 	font-size:32px;
 	margin:0 0 14px;
 	color:#2b2b2b;
 }
 .types_of_bars .type_copy p{
-	font-family:Arial,Helvetica,sans-serif;
+	font-family:Arial,Helvetica,sans-serif !important;
 	font-size:17px;
 	line-height:1.6;
 	color:#555;
@@ -227,7 +265,7 @@ h1.welcome_script{
 	min-width:0;
 	box-sizing:border-box;
 	font-size:15px;
-	font-family:inherit;
+	font-family:Arial,Helvetica,sans-serif !important;
 	line-height:1.4;
 	appearance:none;
 	-webkit-appearance:none;
