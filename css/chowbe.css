@@ -269,15 +269,17 @@ h1.welcome_script{
 .types_of_bars .type_row{
 	display:flex;
 	align-items:center;
-	gap:48px;
-	margin-bottom:48px;
+	gap:40px;
+	margin-bottom:56px;
 }
 .types_of_bars .type_row.reverse{flex-direction:row-reverse;}
-.types_of_bars .type_media,
-.types_of_bars .type_copy{flex:1 1 0;}
+/* Photos take the larger share of the row so the short taglines
+   don't leave half the section empty. */
+.types_of_bars .type_media{flex:1.85 1 0;min-width:0;}
+.types_of_bars .type_copy{flex:1 1 0;min-width:0;}
 .types_of_bars .type_media img{
 	width:100%;
-	aspect-ratio:1/1;
+	aspect-ratio:4/3;
 	object-fit:cover;
 	display:block;
 }
@@ -378,6 +380,96 @@ h1.welcome_script{
 }
 .crew_text{flex:1 1 420px;max-width:560px;}
 .crew_text p{margin-bottom:14px;}
+
+/* ---- Legal pages (Cookie Policy etc.) ---- */
+/* These pages have no dark hero, so the header must sit on a light background. */
+.legal_body .top_panel_wrap,
+.legal_body .top_panel_wrap_inner,
+.legal_body .top_panel_middle{
+	background-image:none !important;
+	background-color:#fff !important;
+}
+.legal_body .top_panel_wrap{border-bottom:1px solid #ececec;}
+.legal_body .top_panel_wrap .chowbe_logo{color:#2b2b2b !important;}
+.legal_body .menu_pushy_button{color:#fff;}
+
+
+.legal_page{
+	max-width:820px;
+	margin:0 auto;
+	padding:150px 0 90px;
+}
+.legal_page h1.simple_heading{
+	margin-bottom:8px !important;
+}
+.legal_page .legal_updated{
+	font-family:Arial,Helvetica,sans-serif !important;
+	font-size:14px;
+	color:#8a8a8a;
+	margin:0 0 36px;
+}
+.legal_page h2{
+	font-family:"Times New Roman",Times,serif !important;
+	font-size:28px !important;
+	font-weight:700 !important;
+	text-transform:none !important;
+	letter-spacing:0 !important;
+	color:#2b2b2b;
+	margin:38px 0 12px !important;
+}
+.legal_page h3{
+	font-family:"Times New Roman",Times,serif !important;
+	font-size:21px !important;
+	font-weight:700 !important;
+	text-transform:none !important;
+	letter-spacing:0 !important;
+	color:#2b2b2b;
+	margin:26px 0 10px !important;
+}
+.legal_page p,
+.legal_page li{
+	font-family:Arial,Helvetica,sans-serif !important;
+	font-size:16px;
+	line-height:1.7;
+	color:#555;
+}
+.legal_page p{margin:0 0 16px;}
+.legal_page ul{margin:0 0 16px;padding-left:20px;}
+.legal_page ul li{margin-bottom:8px;list-style:disc;}
+.legal_page ul li:before{display:none !important;content:none !important;}
+.legal_page a{color:#b0894f;text-decoration:underline;}
+.legal_table{
+	width:100%;
+	border-collapse:collapse;
+	margin:0 0 20px;
+}
+.legal_table th,
+.legal_table td{
+	font-family:Arial,Helvetica,sans-serif !important;
+	font-size:15px;
+	line-height:1.6;
+	text-align:left;
+	padding:12px 14px;
+	border:1px solid #e2e2e2;
+	vertical-align:top;
+}
+.legal_table th{
+	background:#f5f2ed;
+	color:#2b2b2b;
+	font-weight:700;
+}
+.legal_table td{color:#555;}
+.legal_back{margin-top:40px;}
+@media (max-width:768px){
+	.legal_page{padding:110px 0 60px;}
+	.legal_table,
+	.legal_table tbody,
+	.legal_table tr,
+	.legal_table td{display:block;width:100%;box-sizing:border-box;}
+	.legal_table thead{display:none;}
+	.legal_table tr{margin-bottom:14px;border:1px solid #e2e2e2;}
+	.legal_table td{border:none;border-bottom:1px solid #efefef;}
+}
 
 /* ---- Cookie consent banner (UK PECR / UK GDPR) ----
    Accept and Reject are given equal visual weight so the choice is genuine. */

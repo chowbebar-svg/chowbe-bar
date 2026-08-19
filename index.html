@@ -814,7 +814,7 @@
 				<div class="copyright_wrap_inner">
 					<div class="content_wrap">
 						<div class="copyright_text">
-							Chowbe Bar © 2026 All Rights Reserved <a href="#">Privacy Policy</a> and <a href="#">Cookie Policy</a> <a href="#" class="cookie_settings_link" id="cookie_settings_link">Cookie Settings</a>
+							Chowbe Bar © 2026 All Rights Reserved <a href="#">Privacy Policy</a> and <a href="cookie-policy.html">Cookie Policy</a> <a href="#" class="cookie_settings_link" id="cookie_settings_link">Cookie Settings</a>
 						</div>
 						<div class="sc_socials sc_socials_type_icons sc_socials_shape_square sc_socials_size_tiny">
 							<div class="sc_socials_item">
@@ -842,7 +842,7 @@
 	<div class="cookie_banner_inner">
 		<div class="cookie_banner_copy">
 			<h4 class="cookie_banner_title" id="cookie_banner_title">Your privacy choices</h4>
-			<p>We use strictly necessary cookies to make this site work. We&#8217;d also like to set optional cookies to measure how the site is used, but only with your consent. Rejecting optional cookies will not affect your experience. See our <a href="#">Cookie Policy</a>.</p>
+			<p>We use strictly necessary cookies to make this site work. We&#8217;d also like to set optional cookies to measure how the site is used, but only with your consent. Rejecting optional cookies will not affect your experience. See our <a href="cookie-policy.html">Cookie Policy</a>.</p>
 		</div>
 		<div class="cookie_banner_actions">
 			<button type="button" class="cookie_btn cookie_btn_accept" id="cookie_accept">Accept optional cookies</button>
@@ -960,7 +960,8 @@
 			// Optional cookies would be enabled here once analytics is added.
 		}
 
-		if (!readConsent()) openBanner();
+		// #cookie-settings lets other pages (e.g. the Cookie Policy) reopen the choice.
+		if (!readConsent() || window.location.hash === '#cookie-settings') openBanner();
 
 		document.getElementById('cookie_accept').addEventListener('click', function(){ decide('accepted'); });
 		document.getElementById('cookie_reject').addEventListener('click', function(){ decide('rejected'); });
