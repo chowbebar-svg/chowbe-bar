@@ -47,7 +47,7 @@ h5,h6,
 	letter-spacing:3px;
 	line-height:1.1;
 	white-space:nowrap;
-	font-size:22px;
+	font-size:22.5px;
 	color:#2b2b2b;
 }
 .chowbe_logo b{color:inherit;font-weight:700;}
@@ -165,6 +165,15 @@ h2.simple_heading.white{color:#fff !important;}
 	margin-top:0 !important;
 	padding-top:0.5em !important;
 }
+/* Website 3 brief: every category uses two columns of five even rows. */
+#menu-section .sc_list_style_menu > .sc_list_item{
+	min-height:78px;
+	box-sizing:border-box;
+}
+#sc_tab_1_1 .sc_list_style_menu > .sc_list_item:nth-child(n+6),
+#sc_tab_1_3 .sc_list_style_menu > .sc_list_item:nth-child(n+6){
+	display:none;
+}
 @media (max-width:991px){
 	#menu-section .menu_tabs{
 		grid-template-columns:1fr;
@@ -202,11 +211,18 @@ h1.welcome_script{
 	font-style:normal;
 	font-weight:400;
 	text-transform:none;
-	font-size:78px;
+	font-size:62px;
 	line-height:1.05;
 	letter-spacing:0.02em;
 	color:#c19d68;
 	margin-top:0.2em !important;
+}
+
+/* The theme ships spb65rem and spb75rem but no spb72rem, so the Enquiry and
+   Note sections were rendering with zero bottom padding and their content ran
+   straight into the next section. */
+.spb72rem > [class*='container']{
+	padding-bottom:7.2rem !important;
 }
 
 /* ---- Anchor offset so fixed header doesn't cover section tops ---- */
@@ -371,7 +387,15 @@ h1.welcome_script{
 #note{
 	background: url(../images/bg.jpg) repeat left top scroll;
 }
-.crew_wrap{display:flex;align-items:center;gap:46px;flex-wrap:wrap;justify-content:center;}
+.crew_wrap{
+	display:flex;
+	align-items:center;
+	gap:46px;
+	flex-wrap:wrap;
+	justify-content:center;
+	max-width:900px;
+	margin:0 auto;
+}
 .crew_photo{flex:0 0 auto;}
 .crew_photo img{
 	width:260px;
@@ -557,7 +581,7 @@ h1.welcome_script{
 }
 
 @media (max-width:768px){
-	h1.welcome_script{font-size:54px;}
+	h1.welcome_script{font-size:46px;}
 	.enquiry_form .field{flex:1 1 100%;}
 	.crew_wrap{flex-direction:column;text-align:center;}
 	.types_of_bars .type_row,
