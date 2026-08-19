@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Great+Vibes&display=swap);
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
 /* ---- Text wordmark logo (replaces oldstory raster logo) ---- */
 .chowbe_logo{
@@ -108,18 +108,27 @@ h2.simple_heading.white{color:#fff !important;}
 	letter-spacing:1px;
 }
 
-/* ---- Elegant script for the About/Welcome heading ---- */
+/* ---- Luxury serif for the About/Welcome heading ---- */
 h1.welcome_script{
-	font-family:'Great Vibes',cursive;
-	font-weight:400;
+	font-family:'Cormorant Garamond','Didot','Playfair Display',Georgia,serif;
+	font-style:italic;
+	font-weight:300;
 	text-transform:none;
-	font-size:82px;
+	font-size:78px;
 	line-height:1.05;
+	letter-spacing:0.02em;
 	color:#c19d68;
+	margin-top:0.2em !important;
 }
 
 /* ---- Anchor offset so fixed header doesn't cover section tops ---- */
 #about,#types,#menu-section,#enquiry,#note{scroll-margin-top:90px;}
+
+/* About is the first section, so it must clear the overlaid header */
+#about{padding-top:120px !important;}
+@media (max-width:768px){
+	#about{padding-top:90px !important;}
+}
 
 /* About: text left, glass centered in the right half */
 #about .about_row{
@@ -283,7 +292,7 @@ h1.welcome_script{
 .crew_text p{margin-bottom:14px;}
 
 @media (max-width:768px){
-	h1.welcome_script{font-size:58px;}
+	h1.welcome_script{font-size:54px;}
 	.enquiry_form .field{flex:1 1 100%;}
 	.crew_wrap{flex-direction:column;text-align:center;}
 	.types_of_bars .type_row,
