@@ -112,9 +112,10 @@ h2.simple_heading.white{color:#fff !important;}
 #menu-section .menu_intro{
 	font-family:Arial,Helvetica,sans-serif !important;
 	color:#666;
-	max-width:100%;
+	max-width:none;
 	margin:10px 0 0;
 	line-height:1.5;
+	white-space:nowrap;
 }
 #menu-section .menu_tabs > .sc_tabs_titles{
 	grid-column:2;
@@ -187,6 +188,7 @@ h2.simple_heading.white{color:#fff !important;}
 		grid-row:auto;
 		padding-top:0.2em !important;
 	}
+	#menu-section .menu_intro{white-space:normal;}
 }
 #footer .widget_title{
 	font-family:"Times New Roman",Times,serif !important;
