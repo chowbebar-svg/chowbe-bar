@@ -53,11 +53,59 @@ h2.simple_heading.white{color:#fff !important;}
 	font-weight:700 !important;
 	letter-spacing:1px;
 }
-.menu_intro{
+#menu-section .menu_header{
+	max-width:420px;
+	position:relative;
+	z-index:2;
+}
+#menu-section .menu_header .simple_heading{
+	margin-bottom:0 !important;
+}
+#menu-section .menu_intro{
 	font-family:Arial,Helvetica,sans-serif;
 	color:#666;
-	max-width:640px;
-	margin:18px 0 0;
+	max-width:100%;
+	margin:12px 0 0;
+	line-height:1.5;
+}
+#menu-section .menu_tabs{
+	position:relative;
+	z-index:1;
+}
+#menu-section .menu_tabs > .sc_tabs_titles{
+	text-align:right;
+	overflow:visible;
+	margin:0;
+	padding:0;
+	/* Sit beside the Menu heading, not below the intro */
+	margin-top:-6.8rem;
+}
+#menu-section .menu_tabs > .sc_tabs_titles li{
+	float:none;
+	display:inline-block;
+	vertical-align:middle;
+}
+#menu-section .menu_tabs > .sc_tabs_titles li a{
+	white-space:nowrap;
+}
+/* Compensate the titles' negative margin so list stays under the intro */
+#menu-section .menu_tabs > .sc_tabs_content,
+#menu-section .menu_tabs > .ui-tabs-panel{
+	clear:both;
+	margin-top:5.4rem !important;
+	padding-top:0.4em;
+}
+@media (max-width:991px){
+	#menu-section .menu_tabs > .sc_tabs_titles{
+		margin-top:0;
+		text-align:left;
+		padding-top:1.2em;
+	}
+	#menu-section .menu_tabs > .sc_tabs_content,
+	#menu-section .menu_tabs > .ui-tabs-panel{
+		margin-top:1rem !important;
+	}
+	#menu-section .menu_header{max-width:100%;}
 }
 #footer .widget_title{
 	font-family:"Times New Roman",Times,serif !important;
