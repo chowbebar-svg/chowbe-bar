@@ -86,59 +86,107 @@ h2.simple_heading.white{color:#fff !important;}
 	font-weight:700 !important;
 	letter-spacing:1px;
 }
-#menu-section .menu_header{
-	max-width:420px;
+/* Menu header + tabs on one clean row (no negative-margin hacks) */
+#menu-section .menu_tabs{
+	display:grid !important;
+	grid-template-columns:minmax(260px,420px) 1fr;
+	column-gap:28px;
+	row-gap:28px;
+	align-items:start;
 	position:relative;
-	z-index:2;
+	z-index:1;
 }
-#menu-section .menu_header .simple_heading{
-	margin-bottom:0 !important;
+#menu-section .menu_header_copy{
+	grid-column:1;
+	grid-row:1;
+	max-width:100%;
+	min-width:0;
+}
+#menu-section .menu_header_copy .sc_title{
+	margin-top:0 !important;
+	margin-bottom:6px !important;
+}
+#menu-section .menu_header_copy .simple_heading{
+	margin:0 !important;
 }
 #menu-section .menu_intro{
 	font-family:Arial,Helvetica,sans-serif !important;
 	color:#666;
 	max-width:100%;
-	margin:12px 0 0;
+	margin:10px 0 0;
 	line-height:1.5;
 }
-#menu-section .menu_tabs{
-	position:relative;
-	z-index:1;
-}
 #menu-section .menu_tabs > .sc_tabs_titles{
+	grid-column:2;
+	grid-row:1;
+	align-self:start;
+	justify-self:end;
+	/* Drop past the "chowbe bar" eyebrow so tabs line up with "Menu" */
+	margin-top:1.55rem !important;
 	text-align:right;
-	overflow:visible;
-	margin:0;
-	padding:0;
-	/* Sit beside the Menu heading, not below the intro */
-	margin-top:-6.8rem;
+	overflow:visible !important;
+	padding:0 !important;
+	white-space:nowrap;
+	font-size:0; /* kill whitespace gaps between inline-block tabs */
 }
 #menu-section .menu_tabs > .sc_tabs_titles li{
-	float:none;
+	float:none !important;
 	display:inline-block;
 	vertical-align:middle;
+	font-size:1.05rem;
+	margin:0 !important;
+	padding:0 !important;
+}
+#menu-section .menu_tabs > .sc_tabs_titles li + li{
+	margin-left:10px !important;
 }
 #menu-section .menu_tabs > .sc_tabs_titles li a{
 	white-space:nowrap;
+	display:inline-flex !important;
+	align-items:center;
+	justify-content:center;
+	min-height:44px;
+	padding:0.55em 0.9em !important;
+	line-height:1.2 !important;
+	box-sizing:border-box;
+	margin:0 !important;
+	vertical-align:middle;
 }
-/* Compensate the titles' negative margin so list stays under the intro */
+#menu-section .menu_tabs.sc_tabs_style_1 .sc_tabs_titles li + li a{
+	margin-left:0 !important;
+}
+/* Drink lists span full width under the header row */
 #menu-section .menu_tabs > .sc_tabs_content,
 #menu-section .menu_tabs > .ui-tabs-panel{
-	clear:both;
-	margin-top:5.4rem !important;
-	padding-top:0.4em;
+	grid-column:1 / -1;
+	grid-row:auto;
+	clear:none;
+	margin-top:0 !important;
+	padding-top:0.5em !important;
 }
 @media (max-width:991px){
+	#menu-section .menu_tabs{
+		grid-template-columns:1fr;
+		row-gap:18px;
+		align-items:start;
+	}
 	#menu-section .menu_tabs > .sc_tabs_titles{
-		margin-top:0;
+		grid-column:1;
+		grid-row:2;
+		justify-self:start;
 		text-align:left;
-		padding-top:1.2em;
+		white-space:normal;
+		font-size:inherit;
+		margin-top:0 !important;
+	}
+	#menu-section .menu_tabs > .sc_tabs_titles li{
+		margin:0 8px 10px 0 !important;
 	}
 	#menu-section .menu_tabs > .sc_tabs_content,
 	#menu-section .menu_tabs > .ui-tabs-panel{
-		margin-top:1rem !important;
+		grid-row:auto;
+		padding-top:0.2em !important;
 	}
-	#menu-section .menu_header{max-width:100%;}
 }
 #footer .widget_title{
 	font-family:"Times New Roman",Times,serif !important;
