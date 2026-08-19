@@ -3,34 +3,29 @@
 /* ---- Text wordmark logo (replaces oldstory raster logo) ---- */
 .chowbe_logo{
 	display:inline-block;
-	font-family:'Playfair Display',serif;
-	font-weight:900;
-	text-transform:uppercase;
-	letter-spacing:2px;
-	line-height:54px;
-	white-space:nowrap;
-	font-size:26px;
-	color:#fff;
-}
-.chowbe_logo b{color:#c19d68;font-weight:900;}
-.logo_footer_flat.chowbe_logo,
-.logo_footer_flat.chowbe_logo b{color:#2b2b2b;}
-.logo_fixed.chowbe_logo{color:#2b2b2b;}
-.logo_side.chowbe_logo{color:#fff;}
-/* Footer sits on a light background, so the wordmark needs dark text. */
-.logo_footer.chowbe_logo{color:#2b2b2b;font-size:30px;}
-.header_mobile .chowbe_logo{font-size:20px;line-height:44px;}
-
-/* Brand mark above About (page now starts here) */
-.chowbe_brand_mark{
 	font-family:Arial,Helvetica,sans-serif;
 	font-weight:700;
 	text-transform:uppercase;
-	letter-spacing:6px;
-	font-size:28px;
+	letter-spacing:3px;
+	line-height:1.1;
+	white-space:nowrap;
+	font-size:22px;
 	color:#2b2b2b;
-	margin:0;
 }
+.chowbe_logo b{color:inherit;font-weight:700;}
+/* Page starts on a light About section (no dark hero), so header wordmark must be dark */
+.top_panel_wrap .chowbe_logo.logo_main{color:#2b2b2b;}
+.top_panel_wrap .chowbe_logo.logo_fixed{display:none !important;color:#2b2b2b;}
+.top_panel_fixed .top_panel_wrap .chowbe_logo.logo_main{display:none !important;}
+.top_panel_fixed .top_panel_wrap .chowbe_logo.logo_fixed{display:inline-block !important;}
+.logo_footer_flat.chowbe_logo,
+.logo_footer_flat.chowbe_logo b{color:#2b2b2b;}
+.logo_side.chowbe_logo{color:#fff;}
+.logo_footer.chowbe_logo{color:#2b2b2b;font-size:28px;}
+.header_mobile .chowbe_logo{font-size:18px;line-height:1.1;color:#2b2b2b;}
+/* Header address on light bg */
+.top_panel_style_8 .contact_address{color:#2b2b2b;}
+.top_panel_style_8 .contact_address:before{color:#c19d68;}
 
 /* Simple headings — replace decorative western font per Website 2 brief */
 .simple_heading,
