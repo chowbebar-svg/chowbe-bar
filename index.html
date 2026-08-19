@@ -44,11 +44,7 @@
 	<div class="top_panel_wrap_inner top_panel_inner_style_8 top_panel_position_over">
 		<div class="top_panel_middle" >
 			<div class="content_wrap">
-				<div class="contact_info">
-					<address class="contact_address icon-location">
-						Luxury Mobile Bar<br>England &amp; Wales
-					</address>
-				</div>
+				<div class="contact_info"></div>
 				<div class="contact_logo">
 					<div class="logo">
 						<a href="index.html">
@@ -440,46 +436,6 @@
 																		</div>
 																	</div>
 																</li>
-<li class="sc_list_item">
-																	<div class="columns_wrap sc_columns">
-																		<div class="column-1_1 sc_column_item odd first">
-																			<h3 class="sc_title">Coca-Cola</h3>
-																			<div class="text_column mbn_ne"><p>Soft drink</p></div>
-																		</div>
-																	</div>
-																</li>
-<li class="sc_list_item">
-																	<div class="columns_wrap sc_columns">
-																		<div class="column-1_1 sc_column_item odd first">
-																			<h3 class="sc_title">Diet Coke / Coke Zero</h3>
-																			<div class="text_column mbn_ne"><p>Soft drink</p></div>
-																		</div>
-																	</div>
-																</li>
-<li class="sc_list_item">
-																	<div class="columns_wrap sc_columns">
-																		<div class="column-1_1 sc_column_item odd first">
-																			<h3 class="sc_title">Lemonade / Tonic / Soda</h3>
-																			<div class="text_column mbn_ne"><p>Soft drink</p></div>
-																		</div>
-																	</div>
-																</li>
-<li class="sc_list_item">
-																	<div class="columns_wrap sc_columns">
-																		<div class="column-1_1 sc_column_item odd first">
-																			<h3 class="sc_title">Orange / Cranberry Juice</h3>
-																			<div class="text_column mbn_ne"><p>Soft drink</p></div>
-																		</div>
-																	</div>
-																</li>
-<li class="sc_list_item">
-																	<div class="columns_wrap sc_columns">
-																		<div class="column-1_1 sc_column_item odd first">
-																			<h3 class="sc_title">Still / Sparkling Water</h3>
-																			<div class="text_column mbn_ne"><p>Soft drink</p></div>
-																		</div>
-																	</div>
-																</li>
 															</ul>
 														</div>
 													</div>
@@ -833,7 +789,7 @@
 							</aside><aside class="widget_number_2 column-1_2 widget widget_text">
 								<h2 class="widget_title">Mobile</h2>
 								<div class="textwidget">
-									<a href="tel:+447777459550">+44 7777459550</a>
+									<a href="tel:+447777454550">+44 7777454550</a>
 								</div>
 							</aside>
 						</div>
@@ -858,7 +814,7 @@
 				<div class="copyright_wrap_inner">
 					<div class="content_wrap">
 						<div class="copyright_text">
-							Chowbe Bar © 2026 All Rights Reserved <a href="#">Privacy Policy</a> and <a href="#">Cookie Policy</a>
+							Chowbe Bar © 2026 All Rights Reserved <a href="#">Privacy Policy</a> and <a href="#">Cookie Policy</a> <a href="#" class="cookie_settings_link" id="cookie_settings_link">Cookie Settings</a>
 						</div>
 						<div class="sc_socials sc_socials_type_icons sc_socials_shape_square sc_socials_size_tiny">
 							<div class="sc_socials_item">
@@ -881,6 +837,19 @@
 	
 	
 <a href="#" class="scroll_to_top icon-up" title="Scroll to top"></a>
+
+<div class="cookie_banner" id="cookie_banner" role="dialog" aria-modal="false" aria-labelledby="cookie_banner_title" hidden>
+	<div class="cookie_banner_inner">
+		<div class="cookie_banner_copy">
+			<h4 class="cookie_banner_title" id="cookie_banner_title">Your privacy choices</h4>
+			<p>We use strictly necessary cookies to make this site work. We&#8217;d also like to set optional cookies to measure how the site is used, but only with your consent. Rejecting optional cookies will not affect your experience. See our <a href="#">Cookie Policy</a>.</p>
+		</div>
+		<div class="cookie_banner_actions">
+			<button type="button" class="cookie_btn cookie_btn_accept" id="cookie_accept">Accept optional cookies</button>
+			<button type="button" class="cookie_btn cookie_btn_reject" id="cookie_reject">Reject optional cookies</button>
+		</div>
+	</div>
+</div>
 
 	<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type='text/javascript' src='js/vendor/jquery-1.12.3.min.js'></script>
 	<script type='text/javascript' src='js/vendor/jquery-migrate.min.js'></script>
@@ -961,6 +930,47 @@
 				if (button) { button.disabled = false; button.textContent = buttonLabel; }
 			});
 		});
+	})();
+	</script>
+	<script type='text/javascript'>
+	(function(){
+		var STORAGE_KEY = 'chowbe_cookie_consent';
+		var banner = document.getElementById('cookie_banner');
+		if (!banner) return;
+		var settingsLink = document.getElementById('cookie_settings_link');
+
+		function readConsent(){
+			try { return window.localStorage.getItem(STORAGE_KEY); } catch (e) { return null; }
+		}
+		function saveConsent(value){
+			try { window.localStorage.setItem(STORAGE_KEY, value); } catch (e) {}
+		}
+		function openBanner(){
+			banner.hidden = false;
+			// Delay the class so the entry transition runs after the element is laid out.
+			window.requestAnimationFrame(function(){ banner.classList.add('is_visible'); });
+		}
+		function closeBanner(){
+			banner.classList.remove('is_visible');
+			window.setTimeout(function(){ banner.hidden = true; }, 300);
+		}
+		function decide(value){
+			saveConsent(value);
+			closeBanner();
+			// Optional cookies would be enabled here once analytics is added.
+		}
+
+		if (!readConsent()) openBanner();
+
+		document.getElementById('cookie_accept').addEventListener('click', function(){ decide('accepted'); });
+		document.getElementById('cookie_reject').addEventListener('click', function(){ decide('rejected'); });
+
+		if (settingsLink) {
+			settingsLink.addEventListener('click', function(e){
+				e.preventDefault();
+				openBanner();
+			});
+		}
 	})();
 	</script>
 	
